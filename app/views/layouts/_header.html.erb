@@ -1,4 +1,4 @@
-<header role="banner" id="global-header" class="<%= yield(:header_class) %>">
+<header role="banner" id="global-header" class="<%= yield(:header_class) %>" <% if @show_explore_header %>data-test="yes"<% end %>>
   <div class="header-wrapper">
     <div class="header-global">
       <div class="header-logo">

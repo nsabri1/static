@@ -2,6 +2,7 @@ class RootController < ApplicationController
   layout false
 
   before_action :validate_template_param, only: %i[template]
+  before_action :show_explore_header?, only: %i[template]
 
   rescue_from ActionView::MissingTemplate, with: :error_404
 
@@ -39,6 +40,10 @@ class RootController < ApplicationController
   end
 
 private
+
+  def show_explore_header?
+    @show_explore_header = true if params.permit(:show_explore_header)
+  end
 
   def validate_template_param
     # Allow alphanumeric and _ in template filenames.

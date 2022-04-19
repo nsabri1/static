@@ -1,4 +1,4 @@
-FROM ruby:2.7.5-slim-buster
+FROM ruby:2.7.6
 RUN apt-get update -qq && apt-get upgrade -y && apt-get install -y build-essential nodejs && apt-get clean
 
 # This image is only intended to be able to run this app in a production RAILS_ENV

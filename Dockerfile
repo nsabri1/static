@@ -36,7 +36,7 @@ RUN groupadd -g 1001 appuser && \
  
 COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
 COPY --from=builder /app /app
-mkdir -p /app/public/templates && chown -R 1001:1001 /app/public
+RUN mkdir -p /app/public/templates && chown -R 1001:1001 /app/public
 
 USER appuser
 WORKDIR /app

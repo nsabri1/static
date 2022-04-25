@@ -9,7 +9,7 @@ RUN apt-get update -qq && \
     apt-get install -y build-essential nodejs && \
     apt-get clean
 
-RUN mkdir -p /app/public/templates
+RUN mkdir /app
 
 WORKDIR /app
 
